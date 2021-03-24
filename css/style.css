@@ -1,0 +1,337 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #111;
+}
+
+.wrapper{
+    margin: auto;
+    max-width: 1000px;
+}
+
+.friendship, .character, #friendship-value, #character-value{
+    font-family: 'Lato', sans-serif;
+}
+
+#friendship-value, #character-value{
+    padding: 0 5px;
+    color: white;
+}
+
+.friendship{
+    color: cyan;
+}
+
+.character{
+    color: yellow;
+}
+
+header div{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-content: center;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    padding: 0 20px;
+    min-height: 50px;
+    font-family: 'Lato', sans-serif;
+    background-color: teal;
+    z-index: 5;
+}
+
+header img{
+    height: 50px;
+    padding: 12.5px;
+}
+
+header div strong, header div em{
+    display: flex;
+    align-items: center;
+}
+
+header div strong img{
+    margin-left: 10px;
+}
+
+.toggle-button{
+    position: fixed;
+    cursor: pointer;
+    top: 0; left: 0;
+    height: 50px;
+    z-index: 6;
+}
+
+.toggle-button:hover{
+    background-color: rgba(0, 0, 0, 0.50);
+}
+
+aside{
+    position: fixed;
+    left: 0; bottom: 0;
+    width: 1px;
+    height: calc(100vh - 50px);
+    background-color: black;
+    visibility: hidden;
+    transition: .5s all ease-out;
+    border-radius: 0 0 calc(100vh - 50px) 0;
+    z-index: 4;
+}
+
+aside ul{
+    padding: 0 20px;
+    opacity: 0;
+    overflow: hidden;
+    visibility: hidden;
+    transition: .5s all ease-in-out;
+}
+
+aside ul li{
+    list-style: none;
+}
+
+aside ul li a, aside ul li span{
+    color: white;
+    font-size: 20px;
+    font-family: 'Lato', sans-serif;
+    line-height: 60px;
+    text-decoration: none;
+    padding: 20px;
+    white-space: nowrap;
+}
+
+aside ul li span{
+    color: darkred;
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 78px;
+    text-shadow: 1px 0 1px #111, -1px 0 1px #111, 0 1px 1px #111, 0 -1px 1px #111;
+}
+
+aside ul li a{
+    border-left: 1px solid darkgreen;
+    font-weight: 300;
+    text-shadow: 1px 0 1px #111, -1px 0 1px #111, 0 1px 1px #111, 0 -1px 1px #111;
+}
+
+aside ul li a:hover{
+    background-color: rgba(100, 100, 100, 0.5);
+    transition: .3s all ease-in-out;
+}
+
+main{
+    padding-top: 50px;
+}
+
+.template{
+    background-color: darkgreen;
+    font-family: 'Lato', sans-serif;
+    padding: 20px;
+    margin: 20px 10px;
+    border-radius: 30px;
+    border: 2px solid #333;
+    box-shadow: 3px 0 #111, -3px 0 #111, 0 3px #111, 0 -3px #111;
+
+}
+
+h1, h2, h3, h4{
+    text-align: center;
+    font-weight: 900;
+    
+}
+
+h1{
+    color: white;
+    font-family: 'Cormorant Unicase', serif;
+    font-size: 54px;
+    padding: 20px 0 10px 0;
+    letter-spacing: 5px;
+    text-shadow: 2px 0 1px #111, -2px 0 1px #111, 0 2px 1px #111, 0 -2px 1px #111;
+}
+
+.template h2{
+    width: fit-content;
+    margin: 15px auto;
+    font-family: 'Nunito', sans-serif;
+    font-size: 36px;
+    line-height: 72px;
+    padding: 0 50px;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    text-shadow: 2px 0 1px #111, -2px 0 1px #111, 0 2px 1px #111, 0 -2px 1px #111;
+    color: white;
+}
+
+.template h3{
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 33px;
+    padding: 11px;
+}
+
+.template h4{
+    font-size: 16px;
+    line-height: 24px;
+    padding: 8px;
+}
+
+.template p{
+    text-align: justify;
+    font-size: 16px;
+    line-height: 22px;
+    padding: 5px;
+}
+
+.options{
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: row wrap;
+    padding: 10px 0;
+}
+
+.options div{
+    display: flex;
+    position: relative;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    color: white;
+    text-shadow: 1px 0 1px #111, -1px 0 1px #111, 0 1px 1px #111, 0 -1px 1px #111;
+    width: 300px;
+    min-height: 450px;
+    padding: 10px 0;
+    margin: 5px;
+    border-radius: 15px 40px 15px 40px;
+    background-size: cover;
+    background-position: center top;
+    background-color: teal;
+    transition: .3s all ease-in-out;
+}
+
+.options div:hover{
+    margin: -15px;
+    transition: .3s all ease-in-out;
+    z-index: 1;
+}
+
+.options div h3{
+    font-family: 'Great Vibes', cursive;
+    font-size: 36px;
+    letter-spacing: 1px;
+}
+
+.options div p{
+    background-color:rgba(0, 0, 0, 0.30);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+}
+
+.options div h4{
+    background-color: rgba(0, 0, 0, 0.50);
+    width: 80%;
+    border-radius: 20px;
+    align-self: center;
+}
+
+.options div span{
+    display: flex;
+    flex-flow: column;
+    align-self: center;
+}
+
+.options div span h4{
+    border-radius: 20px 20px 0 0;
+}
+
+.single div:hover{
+    border: 1px solid orange;
+    cursor: pointer;
+}
+
+.single div.selected{
+    border: 3px solid orange;
+}
+
+.tiers div span:hover h4, .tiers div span:hover p{
+    border: 1px solid orange;    
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: all .5s ease-in-out;
+    cursor: pointer;
+}
+
+.tiers div span.selected h4, .tiers div span.selected p {
+    border: 1px solid white;
+    background-color: rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+}
+
+.tiers div span:hover h4, .tiers div span:active h4, .tiers div .selected h4{
+    border-bottom: none;
+}
+
+@media screen and (max-width: 700px){
+    body{
+        background-color: #111;
+    }
+
+    header div{
+        padding-right: 0;
+    }
+
+    aside{
+        padding-top: 25px;
+        border-radius: 0;
+    }
+
+    h1{
+        padding: 10px;
+    }
+
+    .template{
+        padding: 20px 0;
+        margin: 20px 0;
+        border-radius: 0;
+        border-left: 0;
+        border-right: 0;
+        box-shadow: 0 0 #111, 0 0 #111, 0 1px #111, 0 -1px #111;
+    }
+
+    .template p{
+        padding: 5px 20px;
+    }
+
+    .options div{
+        width: 100%;
+        min-height: 300px;
+        border-radius: 0;
+    }
+
+    .options div:hover{
+        margin: 0;
+    }
+
+    .options div h3{
+        font-size: 44px;
+        padding: 25px;
+    }
+
+    .options div p{
+        font-size: 18px;
+        border-radius: 0px;
+        padding: 25px;
+    }
+    
+    .options div h4{
+        width: 100vw;
+        font-size: 18px;
+        letter-spacing: 1px;
+        border-radius: 0px;
+    }
+
+    .single div:hover, .tiers div span:hover, .tiers div span:hover h4, .tiers div span:hover p{
+        border: 0;
+    }
+}

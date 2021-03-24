@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset-stylesheet.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cards.css">
+    <title>World Collide</title>
+</head>
+<body>
+    <header>
+        <img class="toggle-button" src="images/icons/hamburger-menu.svg" onclick="toggleMenu()">
+        <div>
+            <strong>
+                <img src="images/icons/hearts.svg">
+                <span class="friendship">Friendship: </span>
+                <span id="friendship-value">0</span>
+            </strong>
+            <strong>
+                <img src="images/icons/spades.svg">
+                <span class="character">Character: </span>
+                <span id="character-value">0</span>
+            </strong>
+        </div>
+    </header>
+    <aside>
+        <ul>
+            <li><span>Menu</span></li>
+            <li><a href="#memories" onclick="toggleMenu()">Memories</a></li>
+            <li><a href="#character-build" onclick="toggleMenu()">Strength of Character</a></li>
+            <li><a href="#friendship-build" onclick="toggleMenu()">Power of Friendship</a></li>
+            <li><a href="#friends" onclick="toggleMenu()">Friends</a></li>
+            <li><a href="#drawbacks" onclick="toggleMenu()">Drawbacks</a></li>
+            <li><a href="#quests" onclick="toggleMenu()">Quests</a></li>
+        </ul>
+    </aside>
+    <main class="wrapper">
+        <h1>Where our Worlds Collide</h1>
+        <section id="intro-1" class="template">
+            <p>Oh thank the Great Goddess!</p>
+            <p>I've spent three years doing nothing but jumping around various dimensions and I finally managed to track you down.</p>
+            <p>It's me, your best friend Leron! It's so good to see you! You look a lot different from what I remember. What happened to you?</p>
+            <p>Oh right, of course... You can't remember me since that damned Necromancer sealed your memories away when she sent you here. Don't worry though, I'll help you get back to where you belong, we could really use your help back there. Your mom was devasted when you disappeared you know? I haven't heard from her since, I hope she's doing alright.</p>
+            <p>Things aren't going so well back there. The Necromancer has spent these three years you were away harassing people. The first thing that happened was the Queen becoming paranoid and sealing off the castle, without their ruler the country doesn't know what to do. Princess Jule wasn't in the castle on Day Zero though, the same day we lost you by the way, and she's been doing all she can to maintain order. She's been trying to introduce a sort of democracy so people feel safe once more.</p>
+            <p>We played with her sometimes when we were kids. If I remember correctly, she bossed us around a lot. She's gotten a lot kinder over the years and I'm certain she'll be happy to see you again.</p>
+            <p>Now, I <em>might</em> be able to give back all your memories at once, but it could overload your brain and kill you. I won't risk that. I'll help you choose what to do, who to bring and all that jazz but I'll only give you enough information for you to decide. I won't try to sway you. You'll get all your memories back once we defeat the Necromancer, I'm sure of it.</p>
+            <p>Let's get back home now, okay?</p>
+        </section>
+        <section id="intro-2" class="template">
+            <p>Welcome back to Genr. This isn't how things usually look, I swear.</p>
+            <p>Well considering we've been without a Queen for three years and the Army has more or less been disbanded, things are pretty good. We're in Parlor right now, the city we grew up in. Your mom moved away after you vanished. Can't say I blame her. Things are still nice here, kids play, laugh and banter, oblivious to everything going on.</p>
+            <p>There are other places, like Fwib, that weren't so lucky. I was there on Day One, when the Necromancer's army rolled in. It was bad. Too many died or surrendered. She's set up fort there since</p>
+            <p>That's the most dangerous area in Genr at the moment. Allegedly she's released most of the people who surrendered, and they all claim the others are free to leave but choose to stay. I wouldn't trust them, she could've easily brainwashed them. But it does make me wonder what's going on...</p>
+        </section>
+        <section id="memories" class="template">
+            <h2>Your Memories</h2>
+            <p>Well, the first thing you should do is try to remember how you were like before the Necromancer tampered with your mind.</p>
+            <p>Your memories will determine how much Power of <strong class="friendship">Friendship</strong> and Strength of <em class="character">Character</em> you have</p>
+            <section class="options single">
+                <div id="memory-charismatic" onclick="decisionHandler.setMemory(this.id)">
+                    <h3>Charismatic</h3>
+                    <p>I loved having classes with you. We didn't learn much, but who cares! We had fun, right? Even the teacher didn't seem to mind that much, she never scolded you too badly when you misbehaved. Maybe you should have paid a bit more attention though, you could've been so much smarter and stronger if you had. You wouldn't have as many friends though.</p>
+                    <h4> 16 <strong class="friendship">Friendship</strong> & 4 <em class="character">Character</em></h4>
+                </div>
+                <div id="memory-bold" onclick="decisionHandler.setMemory(this.id)">
+                    <h3>Bold</h3>
+                    <p>By the Goddess, you kicked everyone's asses in combat training. You were no fun to fight with. I do think we managed to hold you down once, when all our classmates jumped you at once. Yeah, it was dirty, but try losing all your fights while the your opponent isn't even paying attention. You did teach me a few tricks though, and I appreciate it.</p>
+                    <h4>4 <strong class="friendship">Friendship</strong> & 16 <em class="character">Character</em></h4>
+                </div>
+                <div id="memory-good" onclick="decisionHandler.setMemory(this.id)">
+                    <h3>Good</h3>
+                    <p>You used to visit my house all the time, you know? My dumb little sister always said she wished you were her brother instead of me. I get that she was teasing, but still that's hella rude to say to your brother. No one in town hated or even dislike you, but then again why would they? You were... you <em>are</em>, a great person. You never picked a fight with anyone, but you sure have ended a few.</p>
+                    <h4>8 <strong class="friendship">Friendship</strong> & 12 <em class="character">Character</em></h4>
+                </div>
+                <div id="memory-altruist" onclick="decisionHandler.setMemory(this.id)">
+                    <h3>Altruist</h3>
+                    <p>I don't know how you weren't kicked out of school... I've never seen you do any homework, you were always far too busy helping other anyway you could. I'll be honest with you, it made me jealous to see you so well-liked by everyone. But you've never forgotten your old friends, and I sure haven't forgotten you. I'm so happy you're coming back!</p>
+                    <h4>20 <strong class="friendship">Friendship</strong></h4>
+                </div>
+                <div id="memory-adamant" onclick="decisionHandler.setMemory(this.id)">
+                    <h3>Adamant</h3>
+                    <p>The way you swung a sword and carried yourself... teacher couldn't teach you much, that's for sure. But it seemed like you never had time for anything but training, I don't even remember how we became friends. I always felt like I was holding you back, or boring you. I volunteered to get you back to repay you for all the days you spent with me, and not training like you wanted to.</p>
+                    <h4>20 <em class="character">Character</em></h4>
+                </div>
+                <div id="memory-dependable" onclick="decisionHandler.setMemory(this.id)">
+                    <h3>Dependable</h3>
+                    <p>I've met most of my friends through you, and I am really grateful for that. I've had so many amazing experiences all thanks to you and I look forward to repaying the favour tenfold. You can depend on me just as I have depended on you so many times before. I want to... no, <em>we all</em> want to help you adjust, and we will go to any length to assist you in your quests.</p>
+                    <h4>12 <strong class="friendship">Friendship</strong> & 8 <em class="character">Character</em></h4>
+                </div>
+            </section>
+        </section>
+        <section id="character-build" class="template">
+            <h2>Strength of Character</h2>
+            <p>Costs are not cumulative, you do not need to purchase the first tier of a perk to get the second tier.</p>
+            <p>Buying the second tier grants you the first tier for free. Keep in mind that most higher tier perks are straight upgrades.</p>
+            <section class="options tiers">
+                <div id="training-choices">
+                    <h3>Training</h3>
+                    <span onclick="decisionHandler.setTiersBuild(this)">
+                        <h4>1 <strong class="character">Character</strong></h4>
+                        <p>Every kid in Genr learns how to defend themselves with an assortment of weapons, we need to when monsters are so common. I assure you that you won't have any problem with most monsters and thugs.</p>
+                    </span>
+                    <span onclick="decisionHandler.setTiersBuild(this)">
+                        <h4>2 <strong class="character">Character</strong></h4>
+                        <p>It's really no wonder you're so hard to take down. All that time you've spent training has really paid off, huh? We got our ass kicked a lot by you; I think you made our teacher love her job again.</p>
+                    </span>
+                    <span onclick="decisionHandler.setTiersBuild(this)">
+                        <h4>3 <strong class="character">Character</strong></h4>
+                        <p>There aren't a lot of kids who can say they've been trained by actual Knights. You've told me tales of your missions, I sure couldn't have taken down the beasts you did. And you made it all sound so easy too!</p>
+                    </span>
+                </div>
+                <div id="health-choices">
+                    <h3>Health</h3>
+                    <span onclick="decisionHandler.setTiersBuild(this)">
+                        <h4>1 <strong class="character">Character</strong></h4>
+                        <p>At the end of the day, when the rest of us were covered in bruises and scratches, you were completely fine. There was that time you broke your arm, but you haven't had any small wounds.</p>
+                    </span>
+                    <span onclick="decisionHandler.setTiersBuild(this)">
+                        <h4>2 <strong class="character">Character</strong></h4>
+                        <p>I've seen your wounds close within seconds with my own two eyes. I didn't even need to cast a healing spell before you're ready to go again. I don't think you've ever been sick either, not for longer than a day.</p>
+                    </span>
+                    <span onclick="decisionHandler.setTiersBuild(this)">
+                        <h4>3 <strong class="character">Character</strong></h4>
+                        <p>I can't say I've ever even seen you with a scratch before. It's a bit odd to say the least. Allegedly you lost an arm once, but it grew back within the hour. You told me and insisted you weren't lying.</p>
+                    </span>
+                </div>
+                <div id="power-choices">
+                    <h3>Power</h3>
+                    <span onclick="decisionHandler.setTiersBuild(this)">
+                        <h4>1 <strong class="character">Character</strong></h4>
+                        <p>All those hours we spent in the woods chopping trees and what not seem to have paid off handsomely. You should be able to wield most weapons and armour with ease.</p>
+                    </span>
+                    <span onclick="decisionHandler.setTiersBuild(this)">
+                        <h4>2 <strong class="character">Character</strong></h4>
+                        <p>You were so strong you could swing the heaviest weapon we could find easily. It was ridiculous to see how nimbly you held it, you looked like me with a rapier.</p>
+                    </span>
+                    <span onclick="decisionHandler.setTiersBuild(this)">
+                        <h4>3 <strong class="character">Character</strong></h4>
+                        <p>It got old real fast to see how strong you were. "Yeah yeah, put down that house, will you?" I always said. The girls loved being tossed in the air, and that was always a pleasant sight. Thanks for that.</p>
+                    </span>
+                </div>
+                <div id="shield-choices">
+                    <h3>Shield</h3>
+                    <span onclick="decisionHandler.setTiersBuild(this)">
+                        <h4>1 <strong class="character">Character</strong></h4>
+                        <p>You have to be able to take some hits to survive outside the city. Luckily, you were tough enough to handle most hits. Well, those cave trolls still knocked you out, but they were <em>strong</em></p>
+                    </span>
+                    <span onclick="decisionHandler.setTiersBuild(this)">
+                        <h4>2 <strong class="character">Character</strong></h4>
+                        <p>Wait, I'm remembering things wrong, they didn't hurt you, they hurt themselves punching you! It was hilarious to see their faces, they didn't know what to do next.</p>
+                    </span>
+                    <span onclick="decisionHandler.setTiersBuild(this)">
+                        <h4>3 <strong class="character">Character</strong></h4>
+                        <p>It's almost like you were made of steel or something, nothing could harm you. You definitely still took damage from hits, but what would have been massive wounds on me were only scratches on you.</p>
+                    </span>
+                </div>
+                <div id="agility-choices">
+                    <h3>Agility</h3>
+                    <span onclick="decisionHandler.setTiersBuild(this)">
+                        <h4>1 <strong class="character">Character</strong></h4>
+                        <p>A thing that wasn't fun, races. It would be cool if you let somebody else lead once in a while, you know? You don't <em>have</em> to sprint everywhere just because you can.</p>
+                    </span>
+                    <span onclick="decisionHandler.setTiersBuild(this)">
+                        <h4>2 <strong class="character">Character</strong></h4>
+                        <p>I saved up money for several months to buy a horse and keep up with you when we travelled, just so you'd shut up about me being slow. Do you even know how much food a horse eats?</p>
+                    </span>
+                </div>
+                <div id="intelligence-choices">
+                    <h3>Intelligence</h3>
+                    <span onclick="decisionHandler.setTiersBuild(this)">
+                        <h4>1 <strong class="character">Character</strong></h4>
+                        <p>I don't know how it was so easy for you to strategize in the middle of a battle, or how you always seemed to know the best move to make during any given game. Anyway, playing those games against you was no fun.</p>
+                    </span>
+                    <span onclick="decisionHandler.setTiersBuild(this)">
+                        <h4>2 <strong class="character">Character</strong></h4>
+                        <p>Goddess, it's was so unfair how easily you understood concepts I still hadn't even grasped. How did everything come so easily for you?</p>
+                    </span>
+                </div>
+                <div id="learning-choices">
+                    <h3>Learning</h3>
+                    <span onclick="decisionHandler.setTiersBuild(this)">
+                        <h4>1 <strong class="character">Character</strong></h4>
+                        <p>I know you don't remember this, but we did our homework together quite often. Of course, you finished way become me and nagged a lot. It's not my fault you were so much fast at reading!</p>
+                    </span>
+                    <span onclick="decisionHandler.setTiersBuild(this)">
+                        <h4>2 <strong class="character">Character</strong></h4>
+                        <p>Although I've never seen you do any homework, you always managed to do far better than me at all tests. How did you manage to learn so much faster without even trying? That hardly seems fair.</p>
+                    </span>
+                </div>
+                <div id="sustenance-choices">
+                    <h3>Sustenance</h3>
+                    <span onclick="decisionHandler.setTiersBuild(this)">
+                        <h4>1 <strong class="character">Character</strong></h4>
+                        <p>We don't always have the luxury of a good night's sleep while out on quests. It didn't bother you much. You always took first guard duty at night, and managed just fine with only a long nap.</p>
+                    </span>
+                    <span onclick="decisionHandler.setTiersBuild(this)">
+                        <h4>2 <strong class="character">Character</strong></h4>
+                        <p>Not only you barely needed sleep, you hardly ever ate either. Whenever I offered you food, you declined with a smile, and did just alright without it. Really, I don't even know how that's possible.</p>
+                    </span>
+                </div>
+                <div id="elemental-choices">
+                    <h3>Elemental</h3>
+                    <span onclick="decisionHandler.setTiersBuild(this)">
+                        <h4>2 <strong class="character">Character</strong></h4>
+                        <p>Unfortunately it looks like you've forgotten how to use magic. Of course, that's why I'm here, to refresh your memory.<br>Elemental magic is considered offensive and has to do with the four elements: you can create fire and bursts of air but you'll need to use the water and earth around you.
+                        <br><br>
+                        Try to control yourself this time though. Fire is dangerous. Let's not burn down the school again, okay?</p>
+                    </span>
+                </div>
+                <div id="supportive-choices">
+                    <h3>Supportive</h3>
+                    <span onclick="decisionHandler.setTiersBuild(this)">
+                        <h4>2 <strong class="character">Character</strong></h4>
+                        <p>Yeah, I know the term is rather vague, but you won't recognize the proper word. Anyway, supportive magic covers a wide variety of spells, but mostly affecting people. Everything from healing wounds and curing diseases to cheering someone up or instantly cleaning up a mess.
+                        <br><br>
+                        If only you could remember how useful that last spell was, you'd know exactly why I'm mentioning it.
+                        </p>
+                    </span>
+                </div>
+                <div id="alchemy-choices">
+                    <h3>Alchemy</h3>
+                    <span onclick="decisionHandler.setTiersBuild(this)">
+                        <h4>2 <strong class="character">Character</strong></h4>
+                        <p>This can most easily be explained as altering mass and density. You can turn a large boulder into a small, super-dense ball and carry it around if you want to. You can shape it into anything, so it's very useful if you're ever caught without a weapon as you can make one from the ground.
+                        <br><br>
+                        If you're really good at it you'll even fool people into thinking the jewelry you made is real.
+                        </p>
+                    </span>
+                </div>
+                <div id="enchantment-choices">
+                    <h3>Enchantment</h3>
+                    <span onclick="decisionHandler.setTiersBuild(this)">
+                        <h4>2 <strong class="character">Character</strong></h4>
+                        <p>This has to do with strengthening something, making it lighter, sharper and such. To imbue something with an element, or make it regenerate, you need to know those types of magic. Don't worry, even if you only know enchantment magic, it will still take you very far. You just won't have a regrowing sword.
+                        <br><br>
+                        I still use the shield you enchanted way back then. It still hasn't broken no matter what hit it. And man, I've been hit a lot jumping dimensions these past years.
+                        </p>
+                    </span>
+                </div>
+                <div id="armour-choices">
+                    <h3>Armour</h3>
+                    <span onclick="decisionHandler.setTiersBuild(this)">
+                        <h4>2 <strong class="character">Character</strong></h4>
+                        <p>I found this old armour in your house, it's as durable as steel but light as regular clothes. Don't worry, it can adapt for any occasion, so it won't always look like a suit, but it will always look like regular clothing, not armour.
+                        <br><br>
+                        I pity the fool who attacks you, thinking you're not wearing any protection. I certainly am not speaking from first-hand experience.
+                        </p>
+                    </span>
+                </div>
+                <div id="sword-choices">
+                    <h3>Sword</h3>
+                    <span onclick="decisionHandler.setTiersBuild(this)">
+                        <h4>2 <strong class="character">Character</strong></h4>
+                        <p>You got this sword from our teacher the first time you beat her. It can turn into a small artifact, and even change shape to some extent, meaning it can become a dagger or a claymore. Thanks to enchantments it weighs as much as the artifact should regardless of it's shape. You can even change what it transforms into, but I'm not exactly sure exactly how, you should ask teacher.</p>
+                    </span>
+                </div>
+                <div id="bow-choices">
+                    <h3>Bow</h3>
+                    <span onclick="decisionHandler.setTiersBuild(this)">
+                        <h4>2 <strong class="character">Character</strong></h4>
+                        <p>I honestly don't know where you got this from. I found it when we went through your stuff looking for clues. We hoped to find a secret letter hidden somewhere... instead, we found this neat bow. It materializes an arrow when you pull the string back, so you won't run out of arrows anytime soon.</p>
+                    </span>
+                </div>
+                <div id="ring-choices">
+                    <h3>Ring</h3>
+                    <span onclick="decisionHandler.setTiersBuild(this)">
+                        <h4>2 <strong class="character">Character</strong></h4>
+                        <p>You had to be the cool kid and use a fancy ring as your magical catalyst while everybody else did the usual thing. It works just like it should, but it's tied to you. I tried using it but it didn't increase the potency of my spells and they were all equally draining. Like any catalyst, it makes spell casting faster and more efficient, but your ring looks a lot more inconspicuous than a large staff. It is very easy to play it off as an accessory.</p>
+                    </span>
+                </div>
+                <div id="smithing-choices">
+                    <h3>Smithing</h3>
+                    <span onclick="decisionHandler.setTiersBuild(this)">
+                        <h4>1 <strong class="character">Character</strong></h4>
+                        <p>We didn't just learn how to fight, there is more to this world than just killing monsters. Smithing is a lovely trade, and a decent way to make money, especially if you're strong enough to hunt for Bronze Dragons so you can supply yourself with valuable materiais.
+                        <br><br>
+                        Mind you, this is one of the few things I'm better at than you at. Still, you could easily repair your equipment by yourself.
+                        </p>
+                    </span>
+                </div>
+                <div id="apothecary-choices">
+                    <h3>Apothecary</h3>
+                    <span onclick="decisionHandler.setTiersBuild(this)">
+                        <h4>1 <strong class="character">Character</strong></h4>
+                        <p>This was a small hobby of yours, brewing potions with different effects, combining them or trying to amplify them. It's a great way to make money, spice up a party or, uh... assassinate someone. Those two last ones require you to know how to make the potion tasteless, but that didn't seem to give you much trouble.
+                        <br><br>
+                        Just don't make a love potion again, please. I still have nightmares about that time.
+                        </p>
+                    </span>
+                </div>
+                <div id="survival-choices">
+                    <h3>Survival</h3>
+                    <span onclick="decisionHandler.setTiersBuild(this)">
+                        <h4>1 <strong class="character">Character</strong></h4>
+                        <p>Teacher spent a long time drilling into our skulls which plants were edible and which weren't, how to hunt or avoid certain animals, how to spot nests and so on. It seems to have stuck to the both of us. Neither of us have run into any problems like that on our trips to other cities. I'm not saying nights weren't cold in our make-shift tents, but things could have been a lot worse. I'm glad we didn't have to suffer from food poisoning in a forest like some of our less attentive classmates.</p>
+                    </span>
+                </div>
+                <div id="stealth-choices">
+                    <h3>Stealth</h3>
+                    <span onclick="decisionHandler.setTiersBuild(this)">
+                        <h4>1 <strong class="character">Character</strong></h4>
+                        <p>You've never had trouble sneaking apart, much to the dismay of others. Seriously, I'd much appreciate it if you'd stop creeping up on people now. I don't know how the hell you could even do it in broad daylight in the middle of an empty street. I've lost count of how many times I've lost you in a forest, and you're weren't even camouflaged. Sometimes it was like you were barely there, like your presence was concealed, even when I knew you were there.</p>
+                    </span>
+                </div>
+            </section>
+        </section>
+        <section id="friendship-build" class="template">
+            <h2>Power of Friendship</h2>
+            <section class="options tiers">
+                <div id="speaker-choices">
+                    <h3>Speaker</h3>
+                    <span onclick="decisionHandler.setTiersBuild(this)">
+                        <h4>2 <em class="friendship">Friendship</em></h4>
+                        <p>Your voice was like beautiful music to the ear. When you spoke people shut up and listened, giving you their full attention. Your words were mesmerizing, and it wasn't hard for you to get someone to agree with you, provided that they weren't totally against the idea. You did try to get a guy's house once, that ended about as well as I had expected but you thought it would work. </p>
+                    </span>
+                </div>
+                <div id="inspiration-choices">
+                    <h3>Inspiration</h3>
+                    <span onclick="decisionHandler.setTiersBuild(this)">
+                        <h4>2 <em class="friendship">Friendship</em></h4>
+                        <p>You used to be able to instill courage in the hearts of everyone around you. You made men run into the fray with a smile on their faces, even against seemingly impossible odds. It was a joy to fight alongisde you, and I know everyone else who served under you felt the same way. Oh, don't worry, your power to rally people extended far beyond the battlefield, people just wanted to prove their worth to you.</p>
+                    </span>
+                </div>
+                <div id="diplomacy-choices">
+                    <h3>Diplomacy</h3>
+                    <span onclick="decisionHandler.setTiersBuild(this)">
+                        <h4>2 <em class="friendship">Friendship</em></h4>
+                        <p>Teacher taught many things, including leadership, negotiation and how to rule a nation. Not that anyone else expected that information to ever come in handy, but you sure paid attention. I wouldn't be surprised if you became one of the queen's advisors someday. I hope she won't be jealous if you end up being a better ruler than her. Maybe she'll try to set you up with one of her daughters then?</p>
+                    </span>
+                </div>
+                <div id="calming-choices">
+                    <h3>Calming</h3>
+                    <span onclick="decisionHandler.setTiersBuild(this)">
+                        <h4>2 <em class="friendship">Friendship</em></h4>
+                        <p>You had this amazing ability to easily gain someone's trust and calm them down. I've seen you end many fights before they even started. You used this ability to sneak us into a bar once and they didn't even care that we were clearly not old enough. You're not a happy drunk, by the way, and I never took your offers to go back after that night. You've tried it on enemies before too, but it wasn't very effective.</p>
+                    </span>
+                </div>
+                <div id="money-choices">
+                    <h3>Money</h3>
+                    <span onclick="decisionHandler.setTiersBuild(this)">
+                        <h4>1 <em class="friendship">Friendship</em></h4>
+                        <p>I don't know where your mom got all that money from, but it felt like every time I visited you all the furniture in your house was brand new. I'm grateful you spent some of that gold on my equipment, my family wasn't exactly as well off as yours. You could easily afford all sorts of extravagant things, but you still didn't toss around money on unnecessary things. It didn't stop you from working hard either, despite not needing to.</p>
+                    </span>
+                </div>
+                <div id="nobility-choices">
+                    <h3>Nobility</h3>
+                    <span onclick="decisionHandler.setTiersBuild(this)">
+                        <h4>2 <em class="friendship">Friendship</em></h4>
+                        <p>I can barely remember when your family came to town, you brought quite a few servants and boxes with you. I didn't know it was even possible to own so much furniture! I think your mom said she was a "Duchess" or something, but wanted to settle down somewhere a little quieter while you grew up. <em>Maybe she went back to her castle after you dissapeared?</em> Obviously your title isn't as great as a "Prince" or "Princess", but it'll impress most people.</p>
+                    </span>
+                </div>
+                <div id="connections-choices">
+                    <h3>Connections</h3>
+                    <span onclick="decisionHandler.setTiersBuild(this)">
+                        <h4>1 <em class="friendship">Friendship</em></h4>
+                        <p>Your circle of friends was quite extensive. You didn't just know people from Parlor, you had friends all over. I wouldn't be surprised if you knew someone from Fwib, but I couldn't keep track of how many friends you had. I'm sure they'd gladly fill you in on details of your old life that I can't provide you with. I only know the stories you told me. They must have a massive amount of embarrasing stories to tell. They shouldn't be hard to find either.</p>
+                    </span>
+                </div>
+                <div id="dating-choices">
+                    <h3>Dating</h3>
+                    <span onclick="decisionHandler.setTiersBuild(this)">
+                        <h4>1 <em class="friendship">Friendship</em></h4>
+                        <p>I promised not to tell you this. Honestly this is a bit personal and I shouldn't be the one to tell you, but... I can't hide it from you either. The truth is, you used to date one of our friends. I won't tell you who it was though, I promised not to. But this person misses you a lot and would love to be with you again and help you regain your memories. It has been three years after all.</p>
+                    </span>
+                </div>
+                <div id="taming-choices">
+                    <h3>Taming</h3>
+                    <span onclick="decisionHandler.setTiersBuild(this)">
+                        <h4>1 <em class="friendship">Friendship</em></h4>
+                        <p>It felt like every time we went in the forest you came back with a new pet. Even when you had only spent a short period together they were completely docile and trusting towards you. They weren't like that with everyone else, but if you told them to stop the crazy beasts would list. You even prevented your them from killing each other when kept together. I think you rode a dire wolf once too, but I could be mistaken.</p>
+                    </span>
+                </div>
+                <div id="charm-choices">
+                    <h3>Charm</h3>
+                    <span onclick="decisionHandler.setTiersBuild(this)">
+                        <h4>2 <em class="friendship">Friendship</em></h4>
+                        <p>A wink and a cheeky smile got you far, sometimes farther than you'd expected. Every unfortunate date you had to go through was divine punishment for setting me up with... less than ideal dates. Yeah yeah, it was "all in good fun", still a dick move though. You could've used your charms to get me a date with that cute blondie, but no, you were too busy partying all on your own. Still, it's hard to stay mad at you.</p>
+                    </span>
+                </div>
+                <div id="beauty-choices">
+                    <h3>Beauty</h3>
+                    <span onclick="decisionHandler.setTiersBuild(this)">
+                        <h4>2 <em class="friendship">Friendship</em></h4>
+                        <p>I don't know how to say this but... you used to be a lot cuter. Like, I remember having certain dreams about you while we were growing up, and I know for a fact that I wasn't the only one. <em>I shouldn't have said that.</em>
+                        <br><br>
+                        Anyway, I can get your beauty back but we should act immediately to be safe. I'm sure you could find some weirdo wizard to help you out later, but the results tend to be horrifying.</p>
+                    </span>
+                </div>
+                <div id="dysphoria-choices">
+                    <h3>Dysphoria</h3>
+                    <span onclick="decisionHandler.setTiersBuild(this)">
+                        <h4>2 <em class="friendship">Friendship</em></h4>
+                        <p>Uh... are you sure? You're absolutely certain the Necromancer altered your gender when you were banished to Earth? I suppose maybe I'm mistaken... all that dimension travelling could have affected my perception of you.
+                        <br><br>
+                        We'll get that little mix-up fixed right away. You'll get your proper body back, don't worry about it. I'm sure I'll be proven wrong once everyone else sees you.
+                        </p>
+                    </span>
+                </div>
+            </section>
+        </section>
+        <section id="friends" class="template">
+            <h2>Friends</h2>
+            <section class="options single">
+                <div id="leron-choices" class="selected" onclick="decisionHandler.setSingleBuild(this)">
+                    <h3>Leron</h3>
+                    <p>Oh hey, that's me!
+                    <br>
+                    What can I tell you about myself... well for starters, I've known you almost your entire life. I'd like to think we're pretty damn good friends, I did spend the last three years looking for you. I've gone to some pretty weird dimensions during my search, I can tell you all about them later. Also, if you don't mind I could really use a break before we go after the Necromancer. It's been three long years and I crave some... specific fun, and I know just the place for it. Just give me like, a week. Maybe two.
+                    </p>
+                    <h4>0 <em class="friendship">Friendship</em></h4>
+                </div>
+                <div id="rie-choices" onclick="decisionHandler.setSingleBuild(this)">
+                    <h3>Rie</h3>
+                    <p>My dear, sweet, and overly dramatic little sister. Hopefully she's grown out of her <em>"speaking with demons"</em> phase. If we're lucky she'll stop begging you and I for attention. Don't tell her I told you this but she decided to become an Arch Wizard to impress you. She's powerful, that's for sure, and she could only have gotten stronger these past three years. The last thing she told me before I went out to find you was something about the demons protecting me... Could you do me a solid and maybe help her grow a bit? She's fourteen now, not ten, sheeesh.</p>
+                    <h4>2 <em class="friendship">Friendship</em></h4>
+                </div>
+                <div id="elely-choices" onclick="decisionHandler.setSingleBuild(this)">
+                    <h3>Elely</h3>
+                    <p>As stubborn and loyal as she is she's also terribly impulsive. When she found out who was responsible for your disappearance she immediately set out to Fwib and joined the assault against the city. I never knew she cared this much about you. Most of her interations with you involved trying to start a fist-fight, which she'd easily win, then spend the rest of the day following you around gloating. I don't mean to make it sound like she tried to fight everyone, It was just you. She's a sweet girl, but so competitive around you. Like she needed to beat you for some reason...</p>
+                    <h4>2 <em class="friendship">Friendship</em></h4>
+                </div>
+                <div id="wendy-choices" onclick="decisionHandler.setSingleBuild(this)">
+                    <h3>Wendy</h3>
+                    <p>She took alchemy and smithing classes a bit too seriously if you ask me. But then again, she's made a special kind of armor that can make your punches far harder and your body move faster than should be possible, quite the achievement for someone so young.
+                    <br>
+                    Oh and she's not done, there's always something she wants to improve or add to her machines. Last I checked the gauntlets she fought with were at model 26. She definitely sees opportunities rather than limitations when trying to solve a problem, she's not the kind of girl that quits when faced with an impossible task. She'll figure out a way to beat anything.
+                    </p>
+                    <h4>2 <em class="friendship">Friendship</em></h4>
+                </div>
+                <div id="demeter-choices" onclick="decisionHandler.setSingleBuild(this)">
+                    <h3>Demeter</h3>
+                    <p>She's a sweet girl but too passive and soft-spoken for her own good. She'd rather avoid the problem than risk hurting someone's feelings. Sometimes people abuse of her good nature, but thankfully you were always around to punish those who sought to exploit her kindness. She got ridiculous amounts of plants. Heck, she even lives in a massive tree she grew herself. She had to moved out young, her parents didn't appreciate the smell of manure. Luckily nowadays she controls  her flowers to make her smell pleasant.</p>
+                    <h4>2 <em class="friendship">Friendship</em></h4>
+                </div>
+                <div id="kumin-choices" onclick="decisionHandler.setSingleBuild(this)">
+                    <h3>Kumin</h3>
+                    <p>As you'd expect from a kitsune, Kumin has always been a bit of a trickster. She's way too cute for anyone to stay mad at her for long, though her tricks can be seriously extensive and cruel sometimes. She once made a guy think he'd get a girlfriend, but he never got one. She felt bad about it later and has become far more introspective since then. That said, if you need a master tactician or illusionist she's your girl. And if you scratch her behind the ear that's all the thanks she needs, just be sure to stop if her tail isn't wagging. Oh and never call her a catgirl. Really.</p>
+                    <h4>2 <em class="friendship">Friendship</em></h4>
+                </div>
+                <div id="heinrich-lyre-choices" onclick="decisionHandler.setSingleBuild(this)">
+                    <h3>Heinrich & Lyre</h3>
+                    <p>I actually don't know if they're brothers or not, but they're insanely close. They are both orphans and grew up together. Fighting them is annoying, Lyre spams magic while Heinrich keeps you busy in close quarters. They're definitely a force to be reckoned with and I feel sorry for whoever has to fight them seriously. Heinrich is very calm, and in combat he seems to know exactly what you'll do ten seconds before it happens. Lyre is the opposite, despite being a mage he's loud and loves to boast as he spams spells carelessly. They complement each other nicely. We used to joke that they're a lovely couple.</p>
+                    <h4>3 <em class="friendship">Friendship</em></h4>
+                </div>
+                <div id="jule-choices" onclick="decisionHandler.setSingleBuild(this)">
+                    <h3>Jule</h3>
+                    <p>She's had so much responsability thrust upon her at a young age, and she's exceeded all expectations. Despite the absence of our queen we're doing just fine thanks to Jule's hark work. She's a brilliant diplomat, likely thanks to the personal tutorage she's had. She hasn't had much of a chance to be a kid, so she loved to visit us whenever she was able to. She likes to hide the fact that she's a princess since people tend to treat her like a damsel in distress after knowing it. I can definitely tell you she's more than capable of protecting herself. Really, there's no reason for her to have a bodyguard.</p>
+                    <h4>3 <em class="friendship">Friendship</em></h4>
+                </div>
+                <div id="allyn-choices" onclick="decisionHandler.setSingleBuild(this)">
+                    <h3>Allyn</h3>
+                    <p>I think I missed Allyn the most while searching for you. She genuinely cares for her friends, almost like a mother would her children. When sparring with you she never went all out and always had bandages ready to treat any wound she might've caused. She put grat emphasis on studying hard, and usually was willing to help if there was anything we didn't understand. To be honest she was more of a sister than my own was, at least she never meant any of the few insults she said, and she made sure there were no hard feelings after a fight. She'll make an amazing mother and wife one day.</p>
+                    <h4>2 <em class="friendship">Friendship</em></h4>
+                </div>
+                <div id="ilo-choices" onclick="decisionHandler.setSingleBuild(this)">
+                    <h3>Ilo</h3>
+                    <p>Like my sister he's an incredibly skilled mage, though he specializes in dark magic. On top of that he knows just what to say to intimidate someone. He loves raising skeletons to do his chores, even if it freaked out everyone living in our city. He gets a thrill out of spooking people, and he does know an scary amount of spooky stories. He's great to have on a fieldtrip, if you can convince him not to put a skull next to your pillow. He does play fair and won't be mad if you spook him, if anything he'll take that as a challenge.</p>
+                    <h4>2 <em class="friendship">Friendship</em></h4>
+                </div>
+                <div id="lucine-choices" onclick="decisionHandler.setSingleBuild(this)">
+                    <h3>Lucine</h3>
+                    <p>Ilo's big sister. Yes, she is older than him. If she looks at him a certain way he'll quiet down. Weirdly, since she's the one who specialies in light magic, she's all about keeping everyone healthy and safe. If you want to make her even happier just ask her about her dresses, she loves talking about them. But once she gets going she won't stop. She'll pout until you let her finish talking, and she's fantastic at making you feel guilty if you won't let her. She went searching for your mom after you dissappeared, but had no luck locating her. She said it was like your mom couldn't be found with magic.</p>
+                    <h4>2 <em class="friendship">Friendship</em></h4>
+                </div>
+                <div id="lucy-choices" onclick="decisionHandler.setSingleBuild(this)">
+                    <h3>Lucy</h3>
+                    <p>The one thing that sets Lucy aside from everyone else is her crazy luck... maybe that's why she's always wanted to become a treasure hunter. If her family ever needed money she'd go out for a week and come back with bags of gold she could barely carry. I don't even know how there can be so much gold so close to us. She surely can't be making it with alchemy, not only that's a crime but she couldn't figure out even the basics of alchemy. She's far too impulsive to sit and study for long.</p>
+                    <h4>2 <em class="friendship">Friendship</em></h4>
+                </div>
+                <div id="samantha-choices" onclick="decisionHandler.setSingleBuild(this)">
+                    <h3>Samantha</h3>
+                    <p>One of princess Jule's cousins. Unlike the princess she has no problem showing off her title, she loves the attention and treatment she gets from it. As a duchess she is treated almost as highly as a princess but with less restrictions placed upon her. So when she's caught doing something reprehensible like charming people into doing things they normally wouldn't it's not as scandalous. She has no ill intent, but she loves playing the matchmaker. She doesn't really consider that other people may not agree with her idea of a "<em>perfect match</em>". There was this one time that... actually I'll spare you the details.</p>
+                    <h4>2 <em class="friendship">Friendship</em></h4>
+                </div>
+                <div id="jennifer-choices" onclick="decisionHandler.setSingleBuild(this)">
+                    <h3>Jennifer</h3>
+                    <p>The Personal Royal Warden of our Princess Jule of Genr, Jennifer Evergreen. By the goddess she needs to get laid asap. Really, she was always with the princess when she visited, but couldn't play with us because she was "<em>busy</em>", yeah sure, busy staring at others! Seriously, I caught her checking people out so many times, and she had no shame at all. What kind of girl doesn't blush when she's caught like that? She'd only blush and breathe heavily describing the times she got her ass beat in combat, some bodyguard she is, huh?</p>
+                    <h4>2 <em class="friendship">Friendship</em></h4>
+                </div>
+                <div id="ell-choices" onclick="decisionHandler.setSingleBuild(this)">
+                    <h3>Ell</h3>
+                    <p>She became an orphan by the age of seven, and had to learn to live on her own quickly. She spent the next years moving from town to town, surviving however way she could. Eventually she came to our town and was recruited by Knights when they heard her story. They became her new family, and are the only ones who know her past. Well, except by you, but you never told me about it. I'm sure it must have been rough, it's what made her so strong physically and mentally. Nothing can be too terrifying once you've had to kill Giants after being starved and sleep depraved for days.</p>
+                    <h4>2 <em class="friendship">Friendship</em></h4>
+                </div>
+                <div id="illia-choices" onclick="decisionHandler.setSingleBuild(this)">
+                    <h3>Illia</h3>
+                    <p>How ironic is it that the priest's daughter doesn't believe in the goddess? Still, she promised her mother she would spread the word, and she is convincing when she speaks. She knows believing helps the citizens in our time of need, and she's fine with lying for the greater good. She's great at the whole "<em>convincing people to do things they don't want to</em>". She used it on me once, and despite me knowing she could do it I still ended up giving her all my money and agreeing to do her homework. I have no memory of what she did, only that I enjoyed it.</p>
+                    <h4>2 <em class="friendship">Friendship</em></h4>
+                </div>
+                <div id="haii-choices" onclick="decisionHandler.setSingleBuild(this)">
+                    <h3>Haii</h3>
+                    <p>She's moved to our town when she was around ten, and is one the few Elves to not live in the Elven Kingdom. Despite the cultural differences she didn't have much trouble fitting in. Some of her mannerisms can be a tad odd, though. She loves to be out in nature, and sometimes gets anxious being too long inside buildings. I've never seen her get angry or sad out there.</p>
+                    <h4>2 <em class="friendship">Friendship</em></h4>
+                </div>
+                <div id="erin-choices" onclick="decisionHandler.setSingleBuild(this)">
+                    <h3>Erin</h3>
+                    <p>There are many things she likes... she's just not very good at them. She loves archery, but can't fire straight. She tried her hand at alchemy and, well, I'll let her remind you what came from it. But no worries. She never lets her poor abilities bother her. She's happy just to have friends she can go on adventures with. She has some basic survival skills, but no inherent magical abilities. To top it all off she hates people dying, even bad people. She doesn't get that sometimes it's kill or be killed. Don't worry, she'll still be your friend if you choose to kill someone, but she'll pout and call you names the following days.</p>
+                    <h4>1 <em class="friendship">Friendship</em></h4>
+                </div>
+                <div id="emely-choices" onclick="decisionHandler.setSingleBuild(this)">
+                    <h3>Emely</h3>
+                    <p>She doesn't care about much else other than making potions. She's made a bunch of uh... "<em>muscle relaxants</em>" and "<em>mood lifters</em>". I've learnt not to accept any drink she's offered me if she's trying to hide a smile. Luckily, she's awful at keeping secrets, so it's not too hard to avoid her schemes. When she's not studying about poitons or making them, she lounges about, without a care in the world. She thinks her cuteness can get anyone to do her bidding for her, it does work sometimes. It's not my fault, she gets... persuasive if you ignore her.</p>
+                    <h4>1 <em class="friendship">Friendship</em></h4>
+                </div>
+            </section>
+        </section>
+        <section id="drawbacks" class="template">
+            <h2>Drawbacks</h2>
+            <p>Well we couldn't expect the transportation to be a complete success or everyone in the World to love you, right?</p>
+            <section class="options single">
+                <div id="infamous-choices" onclick="decisionHandler.setSingleBuild(this)">
+                    <h3>Infamous</h3>
+                    <p>There's been some nasty rumors about you while you were away. Everything from you abandoning the world with your tail between your legs to being a subordinate of the Necromancer. Even your friends have some doubts about you and it'll take convincing to get them to trust you. It will be hard to gather support on your quest, some people may even attack you depending on what they heard.</p>
+                    <h4><strong>Gain</strong> 1 <strong class="character">Character</strong></h4>
+                </div>
+                <div id="enemies-choices" onclick="decisionHandler.setSingleBuild(this)">
+                    <h3>Enemies</h3>
+                    <p>Somehow you've gained a bunch of enemies highly determined to make your life hell. When they found out you had come back without your memories, well... they started plotting your demise. Since you can't remember what they look like expect backstabbing and betrayal from everyone but your inner circle. You'll have to be prepared for anything.</p>
+                    <h4><strong>Gain</strong> 1 <strong class="character">Character</strong></h4>
+                </div>
+                <div id="traitor-choices" onclick="decisionHandler.setSingleBuild(this)">
+                    <h3>Traitor</h3>
+                    <span>
+                        <h4 style="font-weight: 400;">Requires at least two friends</h4>
+                        <p>One of your friends has plans to kill you. Whether they work for the Necromancer or just hate your gut you'll may never know. They'll strike when least expected and they know how to hide their true intentions. Unfortunately they will not change their minds no matter how you act.</p>
+                    </span>
+                    <h4><strong>Gain</strong> 1 <strong class="character">Character</strong></h4>
+                </div>
+                <div id="jet-lag-choices" onclick="decisionHandler.setSingleBuild(this)">
+                    <h3>Jet Lag</h3>
+                    <p>Your body hasn't taken well to the transportation, and as a result you will experience fatigue and nausea to varying degrees.
+                    <br>
+                    It will be impossible to know when it will happen and the effects may even render you powerless and paralysed for a few hours. With time you may be able to predict when you'll suffer those attacks, but they cannot be avoided.
+                    </p>
+                    <h4><strong>Gain</strong> 1 <em class="friendship">Friendship</em></h4>
+                </div>
+                <div id="soul-link-choices" onclick="decisionHandler.setSingleBuild(this)">
+                    <h3>Soul Link</h3>
+                    <span>
+                        <h4 style="font-weight: 400;">Requires at least one friend</h4>
+                        <p>Unfortunately your spirit had to be tethered to one of your friends in order to transport you safely. What happens to them affects you to a degree, pain and strong emotions carry over to you as well. Should one of you perish, the other will also die within a few weeks.</p>
+                    </span>
+                    <h4><strong>Gain</strong> 1 <em class="friendship">Friendship</em></h4>
+                </div>
+                <div id="puppeteer-choices" onclick="decisionHandler.setSingleBuild(this)">
+                    <h3>Puppeteer</h3>
+                    <p>You will randomly blackout for several hours in which you have no control over your body. You have no control over yourself in this period and no memories of it either, it will be as if someone is controling your body remotely. The magic is too strong to  break, but it might be possible to find the person on the other end. Don't expect it to be easy or for them to cease control willingly.</p>
+                    <h4><strong>Gain</strong> 1 <em class="friendship">Friendship</em></h4>
+                </div>
+                <div id="nightmares-choices" onclick="decisionHandler.setSingleBuild(this)">
+                    <h3>Nightmares</h3>
+                    <p>You require far more sleep than usual, at least 12 hours to feel well-rested. On top of that, you will have intimidating premonitions about your quests every time you sleep. Not all of them will come true, but it will be impossible to know which are. Dare you ignore them, or will you attempt to avoid them all? No matter what you do they won't ever stop.</p>
+                    <h4><strong>Gain</strong> 1 <em class="friendship">Friendship</em></h4>
+                </div>
+                <div id="mirror-image-choices" onclick="decisionHandler.setSingleBuild(this)">
+                    <h3>Mirror Image</h3>
+                    <p>Turns out you have an identical twin who's set out to destroy your reputation. He's as strong as you and even more cunning. He may seek to deceive your friends by pretending to be you. You'll have a hard time gaining the trust of people depending on what your twin is doing. He will become more aggressive as time progresses.</p>
+                    <h4><strong>Gain</strong> 1 <strong class="character">Character</strong></h4>
+                </div>
+                <div id="foreigner-choices" onclick="decisionHandler.setSingleBuild(this)">
+                    <h3>Foreigner</h3>
+                    <p>The world is rejecting you.
+                    <br>
+                    The longer you spend here without your memories the more aggressive the flora and fauna will be towards you. If you don't regain your memories within a year the very ground will devour you. You will be followed by an eerie presence that will terrify people. Some will see you as a bad omen.</p>
+                    <h4><strong>Gain</strong> 1 <strong class="character">Character</strong></h4>
+                </div>
+            </section>
+        </section>
+        <section id="quests" class="template">
+            <h2>Quests</h2>
+            <p>Obviously we'll need to deal with the Necromancer, but there are some things we may want to do first. You'll need time to ajust to your old self before you jump in to fight her.</p>
+            <p>We can do as many of those tasks as you want, but we should always remember our main objective.</p>
+            <section class="options single">
+                <div id="soldiers-choices" onclick="this.classList.toggle('selected')">
+                    <h3>Soldiers</h3>
+                    <span>
+                        <p>There are so many people scared. I don't blame them. The army is hardly doing their job, the country has no leader and monsters are becoming more aggressive. We need every soul available to fight and get our country back on track. The common folk is a complete untapped resource of soldiers. Yes, there are many old and weak, but anyone can be taught to fight half decently. You and our friends have to know how to teach people to fight. If we teach people and train them they wont't need to sit back and wait to be saved, it will be a lot easier to focus on retaking our country that way. They'll be much safer in the future too.</p>
+                    </span>
+                </div>
+                <div id="alliances-choices" onclick="this.classList.toggle('selected'); decisionHandler.refresh(); alert(this.querySelector('span h4').innerText)">
+                    <h3>Alliances</h3>
+                    <span>
+                        <h4 style="font-weight: 400;">Requires Jule</h4>
+                        <p>Jule has been trying to unite our cities and change the way we run the country. She wants each city to have a say in the laws, so the queen doesn't hold all the power. We've already seen what happens without a queen. She hasn't had much luck so far, and the roads between cities are much more dangerous than normal. There are also citizens still loyal to the queen, despite the country having had no leadership for three years... if the two of you could rally the cities, we would gather an enormous army to fight alongside us.</p>
+                    </span>
+                </div>
+                <div id="philosophers-stone-choices" onclick="this.classList.toggle('selected')">
+                    <h3>Philosopher's Stone</h3>
+                    <span>
+                        <p>Lucy came across a page mentioning something called a "<em>Philosopher's Stone</em>" in a diary she found while treasure hunting. The diary claims this stone holds immense power, and can improve someone's magic and alchemy skills immensely. With it we should be on par with the Necromancer for sure. Unfortunately the directions are written in a code. We're working on deciphering it but progress is slow. The diary mentions different places and people, so there are enough clues to follow, but it would take a while to check them all out.</p>
+                    </span>
+                </div>
+                <div id="lieutenant-choices" onclick="this.classList.toggle('selected')">
+                    <h3>Lieutenant</h3>
+                    <span>
+                        <p>The safest route to Fwib goes through a small village near the mountains. Unfortunately, that's where one of the Necromancer's Lieutenent has decided to stay. He's a big and strong monster who harasses the citizens and won't allow anyone to leave. They're starving as he taxes them unreasonably high. What little army remained hasn't able to deal with him. It'll take a bigger force than they can afford at the moment, as their forces are spread out thin to deal with monster threats. With a good strategy a careful planning we should be able to take out the Lieutenent and his men. I hear he's quite prideful, so we may be able to use that in our favor.</p>
+                    </span>
+                </div>
+                <div id="veteran-choices" onclick="this.classList.toggle('selected')">
+                    <h3>Veteran</h3>
+                    <span>
+                        <p>When old man Marcus retired to a remote island, the queen soon realized how great an asset he truly was. The war she'd started with our neighbouring country a few years earlier suddenly wasn't going so smoothly anymore. We still won, but suffered substantial losses and the queen pulled our forces back after taking their capital. We know the location of Marcus, but getting there won't be easy. There's a desert between us and him, followed by an ocean. I doubt he has any clue what's going on back home. As far as I know he's all alone on that island. If we could recruit him, we'd have a great advantage on the battlefield.</p>
+                    </span>
+                </div>
+                <div id="beastkin-choices" onclick="this.classList.toggle('selected')">
+                    <h3>Beastkin</h3>
+                    <span>
+                        <p>There are a lot of humanoid races that generally like to avoid us humans. Our cultures are simply too different. There are some, like the kitsunes, who are more social and interact with us, but most of them just tolerates us when necessary. Despite the Necromancer's army having those humanoid races, we may be able to talk them into fighting for us. It would help improve relationships between our races, there has to be a lot we can learn from them. We'd need to travel to each major race clan and complete a task that relates to their culture. Like impressing the wolfkin with a great feat of strength and leadership.</p>
+                    </span>
+                </div>
+                <div id="morale-choices" onclick="this.classList.toggle('selected')">
+                    <h3>Morale</h3>
+                    <span>
+                        <p>Okay, so hear me out on this one. I asked myself: "How can we get people to <em>want</em> to fight?", and I think I found the perfect thing any man would risk his life to protect. Cute girls in bikinis. We should host some kind of competition where girls act cute and we rate them to find a winner. After seeing how many cute girls there are I'm sure wecan motivate everyone to fight. How could a girl refuse to join when the stakes are so high? It would be selfish not to. Oh, and if you could talk Elely or Erin into joining the competition, I would never ask you anything again. I could die happy if I saw them in bikinis.</p>
+                    </span>
+                </div>
+            </section>
+        </section>
+        <section id="ending" class="template">
+            <p>Well, it seems we're all set.</p>
+            <p>I gotta say, having you back now made all that time I spent looking for you totally worth it. I can already imagine all the stories we'll have to tell from our adventures. Man... I'm excited. Are you excited? I sure hope so!</p>
+            <p>What are we waiting for? Let's go!</p>
+    </main>
+    <script src="js/main.js"></script>
+</body>
+</html>
