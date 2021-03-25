@@ -281,6 +281,10 @@ h1{
         padding-right: 0;
     }
 
+    .toggle-button:hover{
+        background-color: rgba(0, 0, 0, 1);
+    }
+
     aside{
         padding-top: 25px;
         border-radius: 0;
@@ -332,7 +336,12 @@ h1{
         border-radius: 0px;
     }
 
-    .single div:hover, .tiers div span:hover, .tiers div span:hover h4, .tiers div span:hover p{
-        border: 0;
+    .single div:hover{
+        border: 3px solid orange;
+    }
+
+    .tiers div span:hover h4, .tiers div span:hover p{
+        border: 1px solid white;
+        background-color: rgba(0, 0, 0, 0.7);
     }
 }
