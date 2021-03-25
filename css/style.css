@@ -65,10 +65,6 @@ header div strong img{
     z-index: 6;
 }
 
-.toggle-button:hover{
-    background-color: rgba(0, 0, 0, 0.50);
-}
-
 aside{
     position: fixed;
     left: 0; bottom: 0;
@@ -117,10 +113,7 @@ aside ul li a{
     text-shadow: 1px 0 1px #111, -1px 0 1px #111, 0 1px 1px #111, 0 -1px 1px #111;
 }
 
-aside ul li a:hover{
-    background-color: rgba(100, 100, 100, 0.5);
-    transition: .3s all ease-in-out;
-}
+
 
 main{
     padding-top: 50px;
@@ -210,12 +203,6 @@ h1{
     transition: .3s all ease-in-out;
 }
 
-.options div:hover{
-    margin: -15px;
-    transition: .3s all ease-in-out;
-    z-index: 1;
-}
-
 .options div h3{
     font-family: 'Great Vibes', cursive;
     font-size: 36px;
@@ -246,30 +233,15 @@ h1{
     border-radius: 20px 20px 0 0;
 }
 
-.single div:hover{
-    border: 1px solid orange;
-    cursor: pointer;
-}
-
 .single div.selected{
     border: 3px solid orange;
-}
-
-.tiers div span:hover h4, .tiers div span:hover p{
-    border: 1px solid orange;    
-    background-color: rgba(0, 0, 0, 0.6);
-    transition: all .5s ease-in-out;
-    cursor: pointer;
 }
 
 .tiers div span.selected h4, .tiers div span.selected p {
     border: 1px solid white;
     background-color: rgba(0, 0, 0, 0.7);
+    transition: all .5s ease-in-out;
     cursor: pointer;
-}
-
-.tiers div span:hover h4, .tiers div span:active h4, .tiers div .selected h4{
-    border-bottom: none;
 }
 
 @media screen and (max-width: 700px){
@@ -279,10 +251,6 @@ h1{
 
     header div{
         padding-right: 0;
-    }
-
-    .toggle-button:hover{
-        background-color: rgba(0, 0, 0, 0);
     }
 
     aside{
@@ -314,10 +282,6 @@ h1{
         border-radius: 0;
     }
 
-    .options div:hover{
-        margin: 5px;
-    }
-
     .options div h3{
         font-size: 44px;
         padding: 25px;
@@ -335,17 +299,37 @@ h1{
         letter-spacing: 1px;
         border-radius: 0px;
     }
+}
 
-    #memories section div:hover{
-        border: 0;
+@media screen and (min-width: 700px){
+    .toggle-button:hover{
+        background-color: rgba(0, 0, 0, 0.50);
+    }
+
+    aside ul li a:hover{
+        background-color: rgba(100, 100, 100, 0.5);
+        transition: .3s all ease-in-out;
+    }
+
+    .options div:hover{
+        margin: -15px;
+        transition: .3s all ease-in-out;
+        z-index: 1;
     }
 
     .single div:hover{
-        border: 3px solid orange;
+        border: 1px solid orange;
+        cursor: pointer;
     }
 
     .tiers div span:hover h4, .tiers div span:hover p{
-        border: 1px solid white;
-        background-color: rgba(0, 0, 0, 0.7);
+        border: 1px solid orange;    
+        background-color: rgba(0, 0, 0, 0.6);
+        transition: all .5s ease-in-out;
+        cursor: pointer;
+    }
+
+    .tiers div span:hover h4, .tiers div span:active h4, .tiers div .selected h4{
+        border-bottom: none;
     }
 }
