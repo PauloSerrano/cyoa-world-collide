@@ -82,7 +82,7 @@ aside{
 }
 
 aside ul{
-    padding: 0 20px;
+    padding: 20px;
     opacity: 0;
     overflow: hidden;
     visibility: hidden;
@@ -304,13 +304,14 @@ h1{
     }
 
     .options div{
+        padding: 10px 0;
         width: 100%;
         min-height: 300px;
         border-radius: 0;
     }
 
     .options div:hover{
-        margin: 0;
+        margin: 5px;
     }
 
     .options div h3{
