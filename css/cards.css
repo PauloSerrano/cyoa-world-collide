@@ -235,3 +235,40 @@
 #emely-choices{
     background-image: url(../images/friends/Emely.jpg);
 }
+
+/* Drawbacks */
+#infamous-choices{
+    background-image: url(../images/drawbacks/infamous.jpg);
+}
+
+#enemies-choices{
+    background-image: url(../images/drawbacks/enemies.jpg);
+}
+
+#traitor-choices{
+    background-image: url(../images/drawbacks/traitor.jpg);
+}
+
+#jet-lag-choices{
+    background-image: url(../images/drawbacks/jet-lag.jpg);
+}
+
+#soul-link-choices{
+    background-image: url(../images/drawbacks/soul-link.jpg);
+}
+
+#puppeteer-choices{
+    background-image: url(../images/drawbacks/puppeteer.jpg);
+}
+
+#nightmares-choices{
+    background-image: url(../images/drawbacks/nightmares.jpg);
+}
+
+#broken-mirror-choices{
+    background-image: url(../images/drawbacks/broken-mirror.jpg);
+}
+
+#stranger-choices{
+    background-image: url(../images/drawbacks/stranger.png);
+}
