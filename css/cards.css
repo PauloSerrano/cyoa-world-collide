@@ -1,161 +1,161 @@
 /* Memories */
 
 #memory-charismatic{
-    background-image: url(../images/memory-charismatic.jpg);
+    background-image: url(../images/build/memory-charismatic.jpg);
 }
 
 #memory-bold{
-    background-image: url(../images/memory-bold.jpg);
+    background-image: url(../images/build/memory-bold.jpg);
 }
 
 #memory-good{
-    background-image: url(../images/memory-good.jpg);
+    background-image: url(../images/build/memory-good.jpg);
 }
 
 #memory-altruist{
-    background-image: url(../images/memory-altruist.jpg);
+    background-image: url(../images/build/memory-altruist.jpg);
 }
 
 #memory-adamant{
-    background-image: url(../images/memory-adamant.jpg);
+    background-image: url(../images/build/memory-adamant.jpg);
 }
 
 #memory-dependable{
-    background-image: url(../images/memory-dependable.jpg);
+    background-image: url(../images/build/memory-dependable.jpg);
 }
 
 
 /* Character Build */
 
 #training-choices{
-    background-image: url(../images/build-training.jpg);
+    background-image: url(../images/build/build-training.jpg);
 }
 
 #health-choices{
-    background-image: url(../images/build-health.jpg);
+    background-image: url(../images/build/build-health.jpg);
 }
 
 #power-choices{
-    background-image: url(../images/build-power.jpg);
+    background-image: url(../images/build/build-power.jpg);
 }
 
 #shield-choices{
-    background-image: url(../images/build-shield.jpg);
+    background-image: url(../images/build/build-shield.jpg);
 }
 
 #agility-choices{
-    background-image: url(../images/build-agility.jpg);
+    background-image: url(../images/build/build-agility.jpg);
 }
 
 #intelligence-choices{
-    background-image: url(../images/build-intelligence.jpg);
+    background-image: url(../images/build/build-intelligence.jpg);
 }
 
 #learning-choices{
-    background-image: url(../images/build-learning.jpeg);
+    background-image: url(../images/build/build-learning.jpeg);
 }
 
 #sustenance-choices{
-    background-image: url(../images/build-sustenance.jpg);
+    background-image: url(../images/build/build-sustenance.jpg);
 }
 
 #elemental-choices{
-    background-image: url(../images/build-elemental.jpg);
+    background-image: url(../images/build/build-elemental.jpg);
 }
 
 #supportive-choices{
-    background-image: url(../images/build-supportive.jpg);
+    background-image: url(../images/build/build-supportive.jpg);
 }
 
 #alchemy-choices{
-    background-image: url(../images/build-alchemy.jpg);
+    background-image: url(../images/build/build-alchemy.jpg);
 }
 
 #enchantment-choices{
-    background-image: url(../images/build-enchantment.jpg);
+    background-image: url(../images/build/build-enchantment.jpg);
 }
 
 #armour-choices{
-    background-image: url(../images/build-armour.jpg);
+    background-image: url(../images/build/build-armour.jpg);
 }
 
 #sword-choices{
-    background-image: url(../images/build-sword.jpg);
+    background-image: url(../images/build/build-sword.jpg);
 }
 
 #bow-choices{
-    background-image: url(../images/build-bow.jpg);
+    background-image: url(../images/build/build-bow.jpg);
 }
 
 #ring-choices{
-    background-image: url(../images/build-ring.jpg);
+    background-image: url(../images/build/build-ring.jpg);
 }
 
 #smithing-choices{
-    background-image: url(../images/build-smithing.jpg);
+    background-image: url(../images/build/build-smithing.jpg);
 }
 
 #apothecary-choices{
-    background-image: url(../images/build-apothecary.jpg);
+    background-image: url(../images/build/build-apothecary.jpg);
 }
 
 #survival-choices{
-    background-image: url(../images/build-survival.jpg);
+    background-image: url(../images/build/build-survival.jpg);
 }
 
 #stealth-choices{
-    background-image: url(../images/build-stealth.jpg);
+    background-image: url(../images/build/build-stealth.jpg);
 }
 
 
 /* Friendship Build */
 
 #speaker-choices{
-    background-image: url(../images/build-speaker.jpg);
+    background-image: url(../images/build/build-speaker.jpg);
 }
 
 #inspiration-choices{
-    background-image: url(../images/build-inspiration.jpg);
+    background-image: url(../images/build/build-inspiration.jpg);
 }
 
 #diplomacy-choices{
-    background-image: url(../images/build-diplomacy.jpg);
+    background-image: url(../images/build/build-diplomacy.jpg);
 }
 
 #calming-choices{
-    background-image: url(../images/build-calming.jpg);
+    background-image: url(../images/build/build-calming.jpg);
 }
 
 #money-choices{
-    background-image: url(../images/build-money.jpg);
+    background-image: url(../images/build/build-money.jpg);
 }
 
 #nobility-choices{
-    background-image: url(../images/build-nobility.jpg);
+    background-image: url(../images/build/build-nobility.jpg);
 }
 
 #connections-choices{
-    background-image: url(../images/build-connections.jpg);
+    background-image: url(../images/build/build-connections.jpg);
 }
 
 #dating-choices{
-    background-image: url(../images/build-dating.jpg);
+    background-image: url(../images/build/build-dating.jpg);
 }
 
 #taming-choices{
-    background-image: url(../images/build-taming.jpg);
+    background-image: url(../images/build/build-taming.jpg);
 }
 
 #charm-choices{
-    background-image: url(../images/build-charm.jpg);
+    background-image: url(../images/build/build-charm.jpg);
 }
 
 #beauty-choices{
-    background-image: url(../images/build-beauty.jpg);
+    background-image: url(../images/build/build-beauty.jpg);
 }
 
 #dysphoria-choices{
-    background-image: url(../images/build-dysphoria.jpg);
+    background-image: url(../images/build/build-dysphoria.jpg);
 }
 
 
@@ -271,4 +271,9 @@
 
 #stranger-choices{
     background-image: url(../images/drawbacks/stranger.png);
+}
+
+/* Quests */
+#-choices{
+    background-image: url(../images/quests/);
 }
