@@ -79,16 +79,16 @@ aside{
     width: 1px;
     height: calc(100vh - 50px);
     background-color: black;
+    overflow-y: auto;
     visibility: hidden;
     transition: .5s all ease-out;
-    border-radius: 0 0 calc(100vh - 50px) 0;
     z-index: 4;
 }
 
 aside ul{
     padding: 20px;
     opacity: 0;
-    overflow: hidden;
+    overflow-x: hidden;
     visibility: hidden;
     transition: .5s all ease-in-out;
 }
