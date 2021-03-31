@@ -30,7 +30,7 @@
                 <span id="character-value">0</span>
             </strong>
         </div>
-        <img class="check-button" title="Finish" src="images/icons/check-mark.svg" onclick="">
+        <img class="check-button" title="Finish" src="images/icons/check-mark.svg" onclick="decisionHandler.setFinalChoices()">
     </header>
     <aside>
         <ul>
@@ -410,7 +410,7 @@
         <section id="friends" class="template">
             <h2>Friends</h2>
             <section class="options single">
-                <div id="leron-choices" class="selected" onclick="decisionHandler.setSingleBuild(this)">
+                <div id="leron-choices" onclick="decisionHandler.setSingleBuild(this)">
                     <h3>Leron</h3>
                     <p>Oh hey, that's me!
                     <br>
@@ -630,8 +630,26 @@
             <p>I gotta say, having you back now made all that time I spent looking for you totally worth it. I can already imagine all the stories we'll have to tell from our adventures. Man... I'm excited. Are you excited? I sure hope so!</p>
             <p>What are we waiting for? Let's go!</p>
         </section>
-        <button>Finish</button>
+        <button onclick="decisionHandler.setFinalChoices()">Finish</button>
+        <section id="overlay" onclick="this.classList.toggle('active')">
+            <section class="wrapper template">
+                <h2>Your Choices: </h2>
+                <section class="options"></section>
+            </section>
+        </div>
     </main>
     <script src="js/main.js"></script>
 </body>
 </html>
+
+<!-- <section id="quests" class="template">
+    <h2>Quests</h2>
+    <p>Obviously we'll need to deal with the Necromancer, but there are some things we may want to do first. You'll need time to ajust to your old self before you jump in to fight her.</p>
+    <p>We can do as many of those tasks as you want, but we should always remember our main objective.</p>
+    <section class="options single">
+        <div id="soldiers-choices" onclick="this.classList.toggle('selected')">
+            <h3>Soldiers</h3>
+            <span>
+                <p>There are so many people scared. I don't blame them. The army is hardly doing their job, the country has no leader and monsters are becoming more aggressive. We need every soul available to fight and get our country back on track. The common folk is a complete untapped resource of soldiers. Yes, there are many old and weak, but anyone can be taught to fight half decently. You and our friends have to know how to teach people to fight. If we teach people and train them they wont't need to sit back and wait to be saved, it will be a lot easier to focus on retaking our country that way. They'll be much safer in the future too.</p>
+            </span>
+        </div> -->

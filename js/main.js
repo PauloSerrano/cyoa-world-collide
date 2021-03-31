@@ -69,6 +69,7 @@ let decisionHandler = {
                 memories[i].style.opacity = '1'
                 memories[i].style.margin = '-15px'
                 memories[i].style.zIndex = '2'
+                memories[i].classList.toggle('selected')
             }
         }
     },
@@ -222,6 +223,49 @@ let decisionHandler = {
         }
 
         return friendCount
+    },
+
+    setFinalChoices: function(){
+        let currentFriendship = decisionHandler.friendshipValue - decisionHandler.friendshipSpent
+        let currentCharacter = decisionHandler.characterValue - decisionHandler.characterSpent
+        if (currentFriendship < 0 || currentCharacter < 0){
+            alert('Too many points spent!')
+            return
+        }
+
+
+        toggleOverlay()
+        let choices = document.querySelectorAll('.selected')
+        console.log(choices)
+        let choicesDisplay = document.querySelector('#overlay section section')
+        while (choicesDisplay.firstChild) {
+            choicesDisplay.removeChild(choicesDisplay.lastChild);
+          }
+        // choicesDisplay.innerHTML = ''
+        
+        for (i = 0; i < choices.length; i++){
+            let clone
+            console.log(choices[i].parentElement.parentElement.classList)
+            if (choices[i].parentElement.parentElement.classList.contains('tiers')){
+                clone = choices[i].parentElement.cloneNode(true)
+                cloneH4 = clone.querySelector('.selected h4')
+                cloneP = clone.querySelector('.selected p')
+                cloneH4.style.border = '1px solid white'
+                cloneH4.style.backgroundColor = 'rgba(0, 0, 0, 0.7)'
+                cloneP.style.border = '1px solid white'
+                cloneP.style.backgroundColor = 'rgba(0, 0, 0, 0.7)'
+                
+                // border: 1px solid white;
+                // background-color: rgba(0, 0, 0, 0.7);
+            }
+
+            else{
+                clone = choices[i].cloneNode(true)
+            }
+
+            choicesDisplay.appendChild(clone)
+            
+        }
     }
 }
 
@@ -249,4 +293,9 @@ function toggleMenu(){
         links.style.visibility = 'hidden'
         links.style.opacity = '0'
     }
+}
+
+function toggleOverlay(){
+    let overlay = document.querySelector('#overlay')
+    overlay.classList.toggle('active')
 }
