@@ -274,6 +274,30 @@
 }
 
 /* Quests */
-#-choices{
-    background-image: url(../images/quests/);
+#soldiers-choices{
+    background-image: url(../images/quests/soldiers.jpg);
+}
+
+#alliances-choices{
+    background-image: url(../images/quests/alliances.jpg);
+}
+
+#philosophers-stone-choices{
+    background-image: url(../images/quests/philosophers-stone.jpg);
+}
+
+#lieutenant-choices{
+    background-image: url(../images/quests/lieutenant.jpg);
+}
+
+#veteran-choices{
+    background-image: url(../images/quests/veteran.jpeg);
+}
+
+#beastkin-choices{
+    background-image: url(../images/quests/beastkin.jpg);
+}
+
+#morale-choices{
+    background-image: url(../images/quests/morale.jpg)
 }

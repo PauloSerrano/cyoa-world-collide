@@ -65,6 +65,14 @@ header div strong img{
     z-index: 6;
 }
 
+.check-button{
+    position: fixed;
+    cursor: pointer;
+    top: 0; right: 0;
+    height: 50px;
+    z-index: 6;
+}
+
 aside{
     position: fixed;
     left: 0; bottom: 0;
@@ -244,6 +252,23 @@ h1{
     cursor: pointer;
 }
 
+button{
+    width: 50%;
+    height: fit-content;
+    display: block;
+    margin: 20px auto;
+    font-size: 24px;
+    font-weight: 700;
+    font-family: 'Nunito', sans-serif;
+    padding: 15px;
+    background-color: teal;
+    border: 2px solid #333;
+    border-radius: 10px;
+    box-shadow: 3px 0 #111, -3px 0 #111, 0 3px #111, 0 -3px #111;
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+}
+
 @media screen and (max-width: 700px){
     body{
         background-color: #111;
@@ -302,8 +327,12 @@ h1{
 }
 
 @media screen and (min-width: 700px){
-    .toggle-button:hover{
+    .toggle-button:hover, .check-button:hover{
         background-color: rgba(0, 0, 0, 0.50);
+    }
+
+    button:hover{
+        background-color: rgba(0, 128, 128, 0.5);
     }
 
     aside ul li a:hover{
